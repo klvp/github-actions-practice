@@ -16,6 +16,12 @@ jobs:
       - name: Checkout/Clone the code
         uses: actions/checkout@v7 # using predefined action instead of manually writing commands to clone the repository into the runner
 
+      # This install python in runner
+      - name: Install python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13' 
+          
       # This install ruff linter for python
       - name: Install Linter
         run: pip install ruff
